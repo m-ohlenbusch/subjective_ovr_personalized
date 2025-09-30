@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Subjective quality evaluation of personalized own voice reconstruction systems</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<div>
+<h1>
+Subjective quality evaluation of personalized own voice reconstruction systems</h1>
+<p>
+Mattes Ohlenbusch, Christian Rollwage, Simon Doclo, Jan Rennies
+</p>
+
+<h2>Abstract</h2>
+<p>
+Own voice pickup technology for hearable devices facilitates communication in noisy environments.
+Own voice reconstruction (OVR) systems enhance the quality and intelligibility of the recorded noisy own voice signals. 
+Since disturbances affecting the recorded own voice signals depend on individual factors, personalized OVR systems may outperform generic ones.
+In this paper, we propose personalizing OVR systems through data augmentation and fine-tuning, comparing them to their generic counterparts. 
+We investigate the influence of personalization on speech quality assessed by objective metrics and conduct a subjective listening test to evaluate quality under various conditions.
+In addition, we assess the prediction accuracy of the objective metrics by comparing predicted quality with subjectively measured quality.
+Our findings suggest that personalized OVR provides benefits over generic OVR for some talkers only.
+Our results also indicate that performance comparisons between systems are not always accurately predicted by objective metrics. 
+In particular, certain disturbances lead to a consistent over-estimation of quality compared to actual subjective ratings.
+</p>
+</div>
+
+<h2>Links</h2>
+<p>
+Dataset of German own voice recordings: <a href="https://doi.org/10.5281/zenodo.10844599">https://doi.org/10.5281/zenodo.10844599</a>
+</p>
+
+<p>
+Transfer function measurements for simulating environmental noise at hearable microphones: <a href="https://doi.org/10.5281/zenodo.11196867">https://doi.org/10.5281/zenodo.11196867</a> 
+</p>
+
+<h2>Results</h2>
+
+<figure>
+	<img src="boxplot_bad_talker.png" alt="MUSHRA ratings low predicted benefit">
+	<figcaption>
+	Subjective MUSHRA quality ratings (averaged over sentences) for speech in the <i>low predicted benefit</i> case.
+	</figcaption>
+</figure>
+
+<figure>
+	<img src="boxplot_good_talker.png" alt="MUSHRA ratings high predicted benefit">
+	<figcaption>
+	Subjective MUSHRA quality ratings (averaged over sentences) for speech in the <i>high predicted benefit</i> case.
+	</figcaption>
+</figure>
+
+<h2>Audio Examples (recorded pseudo-diffuse factory noise at 0 dB SNR)</h2>
+<table>
+
+<tr class="headrow"> 
+<td>
+Processing condition
+</td>
+<td>
+<i>Low predicted benefit</i> from personalization
+</td>
+
+<td>
+<i>High predicted benefit</i> from personalization
+</td>
+</tr>
+
+<tr> 
+<td>
+Clean outer microphone
+</td>
+<td>
+<audio controls="controls"><source src="talker0/clean_reference_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/clean_reference_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/clean_reference_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/clean_reference_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/clean_reference_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/clean_reference_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr> 
+<td>
+Noisy outer microphone
+</td>
+<td>
+<audio controls="controls"><source src="talker0/noisy_anchor_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/noisy_anchor_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/noisy_anchor_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/noisy_anchor_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/noisy_anchor_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/noisy_anchor_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr> 
+<td>
+Noisy in-ear microphone
+</td>
+<td>
+<audio controls="controls"><source src="talker0/noisy_inear_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/noisy_inear_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/noisy_inear_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/noisy_inear_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/noisy_inear_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/noisy_inear_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr class="gray"> 
+<td>
+EBEN
+</td>
+<td>
+<audio controls="controls"><source src="talker0/output_cv_eben_nonindiv_sim_nonindiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_eben_nonindiv_sim_nonindiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_eben_nonindiv_sim_nonindiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/output_cv_eben_nonindiv_sim_nonindiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_eben_nonindiv_sim_nonindiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_eben_nonindiv_sim_nonindiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr class="gray"> 
+<td>
+MWF
+</td>
+<td>
+<audio controls="controls"><source src="talker0/output_mwf_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_mwf_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_mwf_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/output_mwf_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_mwf_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_mwf_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr> 
+<td>
+Generic data augmentation
+</td>
+<td>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr> 
+<td>
+Generic data augmentation, generic fine-tuning
+</td>
+<td>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_nonindiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_nonindiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_nonindiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_nonindiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_nonindiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_nonindiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr> 
+<td>
+Generic data augmentation, personalized fine-tuning
+</td>
+<td>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_indiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_indiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_nonindiv_sim_indiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_indiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_indiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_nonindiv_sim_indiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+<tr> 
+<td>
+Personalized data augmentation, personalized fine-tuning
+</td>
+<td>
+<audio controls="controls"><source src="talker0/output_cv_indiv_sim_indiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_indiv_sim_indiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker0/output_cv_indiv_sim_indiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+<td>
+<audio controls="controls"><source src="talker6/output_cv_indiv_sim_indiv_finetune_0.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_indiv_sim_indiv_finetune_1.wav" type="audio/x-wav" /></audio>
+<audio controls="controls"><source src="talker6/output_cv_indiv_sim_indiv_finetune_2.wav" type="audio/x-wav" /></audio>
+</td>
+</tr>
+
+
+<table>

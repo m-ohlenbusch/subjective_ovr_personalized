@@ -1,0 +1,28 @@
+
+body {align: center; max-width: 800px; margin: auto; font-family: Helvetica, sans-serif;}
+h1 {text-align: center; max-width: 800px}
+h2 {text-align: center; max-width: 800px}
+p {text-align: center; max-width: 800px}
+div {text-align: center;}
+figure {text-align: center;}
+img {max-width: 700px; height: auto}
+audio {text-align: center;}
+table {text-align: center; align: center; margin-left: auto; margin-right: auto; border-collapse: collapse;}
+
+table th,
+table td {
+    padding: 12px 15px;
+	border: 1px solid;
+}
+
+            
+
+th{}.headrow {
+	font-weight: bold;
+}
+	
+tr {
+}
+.gray {
+	background-color: #e0e0e0;
+}
